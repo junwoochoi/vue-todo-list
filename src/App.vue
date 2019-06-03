@@ -1,13 +1,14 @@
 <template>
   <div id="app">
-    <TodoInput/>
-    <TodoList :todoList="todoList"/>
+    <TodoInput @createTodo="createTodo"/>
+    <TodoList  :todoList="todoList"/>
   </div>
 </template>
 
 <script>
 import TodoList from "./components/TodoList.vue";
 import TodoInput from "./components/TodoInput.vue";
+
 
 export default {
   name: "app",
@@ -23,6 +24,11 @@ export default {
           state: "active"
         }
       ]
+    }
+  },
+  methods:{
+    createTodo: function(todoItem){
+      this.todoList.push(todoItem);
     }
   }
   

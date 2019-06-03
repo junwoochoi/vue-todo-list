@@ -21,7 +21,7 @@ export default {
                 state: 'active'
             };
             
-            alert(this.todoItem);
+            this.$emit("createTodo", todoItem);
             
             this.todoItem = null;
 
